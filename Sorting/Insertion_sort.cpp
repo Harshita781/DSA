@@ -7,7 +7,7 @@ void swap(int *a, int *b)
     *a = *b;
     *b = temp;
 }
-void Bubble_sort(int *arr, int n)
+void Insertion_sort(int *arr, int n)
 {
     for (int i = 0; i < n; i++)
     {
@@ -46,7 +46,7 @@ int main()
         cin >> arr[i];
     }
     cout << "array after applying insertion sort:";
-    Bubble_sort(arr, n);
+    Insertion_sort(arr, n);
     print(arr, n);
 
     return 0;
