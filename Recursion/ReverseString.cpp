@@ -15,4 +15,8 @@ int main(){
     reverse(0,s.length()-1,s);
     cout<<s<<endl;
     return 0;
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> 01bf85c5608c02a08aa479e20a77415041458ade
