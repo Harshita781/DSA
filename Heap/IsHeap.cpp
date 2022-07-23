@@ -1,3 +1,15 @@
+/*
+Given a binary tree. The task is to check whether the given tree follows the max heap property or not.
+Note: Properties of a tree to be a max heap - Completeness and Value of node greater than or equal to its child.
+
+Example 1:
+
+Input:
+      5
+    /  \
+   2    3
+Output: 1
+*/
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
