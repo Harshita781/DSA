@@ -8,13 +8,11 @@ Node* floydDetectLoop(Node* head){
         fast=fast->next;
         if(fast!=NULL){
             fast->next;
-
         }
         slow=slow->next;
         if(slow==fast){
             return true;
         }
-
     }
     return false;
 }
