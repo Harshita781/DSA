@@ -1,6 +1,6 @@
 Node* floydDetectLoop(Node* head){
     if(head==NULL){
-        return false;
+        return NULL;
     }
     Node* slow=head;
     Node* fast=head;
@@ -11,8 +11,8 @@ Node* floydDetectLoop(Node* head){
         }
         slow=slow->next;
         if(slow==fast){
-            return true;
+            return slow;
         }
     }
-    return false;
+    return NULL;
 }
