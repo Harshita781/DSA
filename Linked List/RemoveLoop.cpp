@@ -34,6 +34,9 @@ Node* getStartingNode(Node* head){
         return NULL;
     }
     Node* intersection=floydDetectLoop(head);
+    if(intersection==NULL){
+        return NULL;
+    }
     Node* slow=head;
     while(slow!=intersection){
         slow=slow->next;
@@ -48,6 +51,9 @@ Node* RemoveLoop(Node* head){
         return NULL;
     }
     Node* startOfLoop=getStartingNode(head);
+    if(startOfLoop==NULL){
+        return NULL;
+    }
     Node* temp=startOfLoop;
 
     while(temp->next!=startOfLoop){
