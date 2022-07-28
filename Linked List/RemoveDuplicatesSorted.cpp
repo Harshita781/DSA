@@ -1,4 +1,5 @@
 /*
+Problem Statement
 You want to play your fried, but your friend has pending homework, help him complete that.
 Yoy are given a 'Head' of a sorted linked list.You can remove some values from the linked list.In the end,you must return a sorted linked list that contains no adjacent values that are equal.
 
