@@ -1,3 +1,15 @@
+/*
+Problem Statement
+You are given a linked list having N number of nodes and each will have an integer while can be 0,1, or 2. You have to sort the given linked list in ascending order.
+Sample Input 1:
+2
+1 0 2 1 2 -1
+0 0 1 2 -1
+Sample Output 1:
+0 1 1 2 2 -1
+0 0 1 2 -1
+*/
+
 Node* Sort(Node* head){
     int zeroCount=0;
     int oneCount=0;
