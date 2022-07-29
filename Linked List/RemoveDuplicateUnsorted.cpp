@@ -11,7 +11,7 @@ Sample Output 1 :
 -1 1 2 3 
 -1 1 2 3 4 
 */
-bool RemoveDuplicateUnsorted(Node* head){
+Node* RemoveDuplicateUnsorted(Node* head){
     if(head==NULL){
         return NULL;
     }
@@ -27,5 +27,5 @@ bool RemoveDuplicateUnsorted(Node* head){
         visited[temp]=true;
         temp=temp->next;
     }
-    return false;
+    return head;
 }
