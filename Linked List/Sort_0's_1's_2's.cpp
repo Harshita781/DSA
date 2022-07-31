@@ -46,38 +46,48 @@ Node* Sort(Node* head){
     return head;
 }
 */
-//Approach 2
-Node* SortList(Node* head){
-    Node* zerohead=new Node(-1);
-    Node* zeroTail=zerohead;
-    Node* onehead=new Node(-1);
-    Node* oneTail=zerohead;
-    Node* twohead=new Node(-1);
-    Node* twoTail=twohead;
-    Node* curr=head;
-    while(curr!=NULL){
-        int value=curr->data;
-        if(value==0){
-            insertAtTail(zeroTail,curr);
-
+// Approach 2
+Node *SortList(Node *head)
+{
+    Node *zerohead = new Node(-1);
+    Node *zeroTail = zerohead;
+    Node *onehead = new Node(-1);
+    Node *oneTail = zerohead;
+    Node *twohead = new Node(-1);
+    Node *twoTail = twohead;
+    Node *curr = head;
+    while (curr != NULL)
+    {
+        int value = curr->data;
+        if (value == 0)
+        {
+            insertAtTail(zeroTail, curr);
         }
-        else if(value==1){
-            insertAtTail(oneTail,curr);
-
+        else if (value == 1)
+        {
+            insertAtTail(oneTail, curr);
         }
-        curr=curr->next;
+        curr = curr->next;
     }
-    if(onehead->next!=NULL){
-        zeroTail->next=onehead->next;
+    if (onehead->next != NULL)
+    {
+        zeroTail->next = onehead->next;
     }
-    else {
-        zeroTail->next=twohead->next;
+    else
+    {
+        zeroTail->next = twohead->next;
     }
-    oneTail->next=twohead->next;
-    twoTail->next=NULL;
-    head=zerohead->next;
+    oneTail->next = twohead->next;
+
+    twoTail->next = NULL;
+  
+    head = zerohead->next;
+  
     delete zerohead;
+  
     delete onehead;
+  
     delete twohead;
+  
     return head;
 }
