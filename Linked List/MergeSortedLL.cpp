@@ -1,3 +1,6 @@
+/*
+Problem Statement
+You are given two sorted linked lists.You have to merge them to produce a combined sorted linked list.You need to return the head of the final linked list.
 void solve(Node<int>* first, Node<int>* second){
     Node* curr1=first;
     Node* next1=curr1->next;
