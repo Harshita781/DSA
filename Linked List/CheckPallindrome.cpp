@@ -1,3 +1,13 @@
+/*
+Given a singly linked list of size N of integers. The task is to check if the given linked list is palindrome or not.
+
+Example 1:
+Input:
+N = 3
+value[] = {1,2,1}
+Output: 1
+*/
+
 bool checkPalindrome(vector<int> arr){
     int n=arr.size();
     int s=0;
