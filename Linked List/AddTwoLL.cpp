@@ -1,4 +1,13 @@
-
+/*
+Problem Statement
+Given two decimal numbers represented by two linked lists of size N and M respectively. The task is to return a linked list that represents the sum of these two numbers.
+Input:
+N = 2
+valueN[] = {4,5}
+M = 3
+valueM[] = {3,4,5}
+Output: 3 9 0 
+*/
 void insertAtTail(Node* &tail, int d) {
      // new node create
     Node* temp = new Node(d);
