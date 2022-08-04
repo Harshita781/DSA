@@ -7,6 +7,7 @@ N = 3
 value[] = {1,2,1}
 Output: 1
 */
+
 //Approach 1
 bool checkPalindrome(vector<int> arr){
     int n=arr.size();
@@ -31,6 +32,7 @@ bool IsPallindrome(Node* head){
     }
     return checkPallindrome(arr);
 }
+
 //Approach 2
 Node* Middle(Node* head){
     Node* slow=head;
