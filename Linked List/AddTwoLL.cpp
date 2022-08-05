@@ -8,11 +8,18 @@ M = 3
 valueM[] = {3,4,5}
 Output: 3 9 0 
 */
-void insertAtTail(Node* &tail, int d) {
+void insertAtTail(Node* &head,Node* &tail int d) {
      // new node create
     Node* temp = new Node(d);
-    tail -> next = temp;
-    tail  = temp;
+    if(head==NULL){
+        head=temp;
+        tail=temp;
+        return;
+    }
+    else{
+        tail->next=temp;
+        tail=temp;
+    }
 }
 
 Node* add(Node* first,Node*second){
@@ -31,7 +38,7 @@ Node* add(Node* first,Node*second){
         int digit=sum%10;
         insertAtTail(ansHead,ansTail,digit);
         
-        carrt=sum/10;
+        carry=sum/10;
         if(first!=NULL)
             first=first->next;
 
@@ -51,7 +58,7 @@ Node* reverse(Node* head){
         next=curr->next;
         curr->next=prev;
         prev=curr;
-        curr=next
+        curr=next;
     }
     return prev;
 }
