@@ -6,6 +6,7 @@ void solve(Node<int>* first, Node<int>* second){
     Node* next1=curr1->next;
     Node* curr2=second;
     Node* next2=curr2->next;
+*/
 
     while(next1!=NULL && curr2!=NULL){
         if((curr2->data>=curr2=!=NULL) && (curr2->data<=next1->data)){
