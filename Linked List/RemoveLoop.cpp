@@ -6,59 +6,71 @@ Expected Complexity:Try doing it in O(n) time complexity and O(1) space complexi
 
 Sample Input:
 6 2
-1 2 3 4 5 6 
+1 2 3 4 5 6
 Sample Output:
 1 2 3 4 5 6
 */
-Node* floydDetectLoop(Node* head){
-    if(head==NULL){
+Node *floydDetectLoop(Node *head)
+{
+    if (head == NULL)
+    {
         return NULL;
     }
-    Node* slow=head;
-    Node* fast=head;
-    while(slow!=NULL && fast!=NULL){
-        fast=fast->next;
-        if(fast!=NULL){
+    Node *slow = head;
+    Node *fast = head;
+    while (slow != NULL && fast != NULL)
+    {
+        fast = fast->next;
+        if (fast != NULL)
+        {
             fast->next;
         }
-        slow=slow->next;
-        if(slow==fast){
+        slow = slow->next;
+        if (slow == fast)
+        {
             return slow;
         }
     }
     return NULL;
 }
 
-Node* getStartingNode(Node* head){
-    if(head==NULL){
+Node *getStartingNode(Node *head)
+{
+    if (head == NULL)
+    {
         return NULL;
     }
-    Node* intersection=floydDetectLoop(head);
-    if(intersection==NULL){
+    Node *intersection = floydDetectLoop(head);
+    if (intersection == NULL)
+    {
         return NULL;
     }
-    Node* slow=head;
-    while(slow!=intersection){
-        slow=slow->next;
-        intersection=intersection->next;
-
+    Node *slow = head;
+    while (slow != intersection)
+    {
+        slow = slow->next;
+        intersection = intersection->next;
     }
     return slow;
 }
 
-Node* RemoveLoop(Node* head){
-    if(head==NULL){
+Node *RemoveLoop(Node *head)
+{
+    if (head == NULL)
+    {
         return NULL;
     }
-    Node* startOfLoop=getStartingNode(head);
-    if(startOfLoop==NULL){
+    Node *startOfLoop = getStartingNode(head);
+    if (startOfLoop == NULL)
+    {
         return NULL;
     }
-    Node* temp=startOfLoop;
+    Node *temp = startOfLoop;
 
-    while(temp->next!=startOfLoop){
-        temp=temp->next;
+    while (temp->next != startOfLoop)
+    {
+        temp = temp->next;
     }
-    temp->next=NULL;
+    temp->next = NULL;
     return head;
 }
