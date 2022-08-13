@@ -5,12 +5,12 @@ Note: Properties of a tree to be a max heap - Completeness and Value of node gre
 Example 1:
 
 Input:
-      5
-    /  \
+	  5
+	/  \
    2    3
 Output: 1
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 struct Node
 {
@@ -27,15 +27,14 @@ struct Node *newNode(int k)
 	return node;
 }
 
-unsigned int countNodes(struct Node* root)
+unsigned int countNodes(struct Node *root)
 {
 	if (root == NULL)
 		return (0);
-	return (1 + countNodes(root->left)
-			+ countNodes(root->right));
+	return (1 + countNodes(root->left) + countNodes(root->right));
 }
 
-bool isCompleteUtil (struct Node* root,
+bool isCompleteUtil(struct Node *root,
 					unsigned int index,
 					unsigned int number_nodes)
 {
@@ -45,14 +44,13 @@ bool isCompleteUtil (struct Node* root,
 	if (index >= number_nodes)
 		return (false);
 
-
-	return (isCompleteUtil(root->left, 2*index + 1,
-						number_nodes) &&
-			isCompleteUtil(root->right, 2*index + 2,
-						number_nodes));
+	return (isCompleteUtil(root->left, 2 * index + 1,
+						   number_nodes) &&
+			isCompleteUtil(root->right, 2 * index + 2,
+						   number_nodes));
 }
 
-bool isHeapUtil(struct Node* root)
+bool isHeapUtil(struct Node *root)
 {
 	if (root->left == NULL && root->right == NULL)
 		return (true);
@@ -71,21 +69,21 @@ bool isHeapUtil(struct Node* root)
 	}
 }
 
-bool isHeap(struct Node* root)
+bool isHeap(struct Node *root)
 {
 	unsigned int node_count = countNodes(root);
 	unsigned int index = 0;
 
 	if (isCompleteUtil(root, index,
-					node_count)
-		&& isHeapUtil(root))
+					   node_count) &&
+		isHeapUtil(root))
 		return true;
 	return false;
 }
 
 int main()
 {
-	struct Node* root = NULL;
+	struct Node *root = NULL;
 	root = newNode(10);
 	root->left = newNode(9);
 	root->right = newNode(8);
