@@ -1,12 +1,13 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class Stack{
-    public:
+class Stack
+{
+public:
     int *arr;
     int data;
     int next;
 };
 
-int main(){
-    
+int main()
+{
 }
