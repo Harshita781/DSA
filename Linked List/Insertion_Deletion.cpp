@@ -132,21 +132,6 @@ int main() {
 
     cout << "head " << head -> data << endl;
     cout << "tail " << tail -> data << endl;
-    //print(head);
-
-    if(floydDetectLoop(head) != NULL) {
-        cout << "Cycle is present " << endl;
-    }
-    else
-    {
-        cout << "no cycle" << endl;
-    }
-
-    Node* loop = getStartingNode(head);
-
-    cout << "loop starts at " << loop -> data  << endl;
-
-    removeLoop(head);
     print(head);
 
     return 0;
