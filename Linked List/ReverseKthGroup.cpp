@@ -7,27 +7,31 @@ Sample Input 1:
 1 2 3 4 5 6 -1
 2
 5 4 3 7 9 2 -1
-4 
+4
 Sample Output 1:
 2 1 4 3 6 5
 7 3 4 5 2 9
 */
-Node* KReverse(Node* head,int k){
-    if(head==NULL){
+Node *KReverse(Node *head, int k)
+{
+    if (head == NULL)
+    {
         return NULL;
     }
-    Node* next=NULL;
-    Node* curr=head;
-    Node* prev=NULL;
-    int count=0;
-    while(curr!=NULL && count<k){
-        next=curr->next;
-        curr->next=prev;
-        prev=curr;
-        curr=next;
+    Node *next = NULL;
+    Node *curr = head;
+    Node *prev = NULL;
+    int count = 0;
+    while (curr != NULL && count < k)
+    {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
     }
-    if(next!=NULL){
-        head->next=KReverse(next,k);
+    if (next != NULL)
+    {
+        head->next = KReverse(next, k);
     }
     return prev;
 }

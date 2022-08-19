@@ -80,14 +80,14 @@ Node *SortList(Node *head)
     oneTail->next = twohead->next;
 
     twoTail->next = NULL;
-  
+
     head = zerohead->next;
-  
+
     delete zerohead;
-  
+
     delete onehead;
-  
+
     delete twohead;
-  
+
     return head;
 }
