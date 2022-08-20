@@ -1,3 +1,4 @@
+/* BASIC OPERATIONS ON STACK USING ARRAY */
 #include <iostream>
 using namespace std;
 class Stack
