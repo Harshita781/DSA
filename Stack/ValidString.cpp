@@ -1,3 +1,15 @@
+
+/*
+Problem Statement
+You are given string 'STR' consisting solely of "{","}","(",")","[" and "]".Determine whether the parenthesis are balanced.
+Sample Input 1 :
+2
+[()]{}{[()()]()}
+[(])
+Sample Output 1 :
+Balanced
+Not Balanced
+*/
 #include<iostream>
 #include<stack>
 using namespace std;
@@ -34,7 +46,7 @@ bool isValidParenthesis(string expression){
 }
 
 int main(){
-    string str = {'(',')','{'};
+    string str = "[()]{}{[()()]()}";
     if(isValidParenthesis(str)){
       cout<<"String is valid"<<endl;
     }
