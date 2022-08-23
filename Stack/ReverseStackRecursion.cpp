@@ -30,6 +30,16 @@ void reverseStack(stack<int> &stack){
     reverseStack(stack);
     insertAtBottom(stack,num);
 }
+void PrintStack(stack<int> m)
+{
+    if (m.empty())
+        return;
+    int x = m.top();
+    m.pop();
+    PrintStack(m);
+    cout << x << " ";
+    m.push(x);
+}
 
 int main(){
     stack<int> stack;
@@ -37,8 +47,9 @@ int main(){
     stack.push(32);
     stack.push(10);
     stack.push(9);
-    cout<<stack.top()<<endl;
+    PrintStack(stack);
     reverseStack(stack);
-    cout<<stack.top();
+    cout<<endl;
+    PrintStack(stack);
     return 0;
 }
