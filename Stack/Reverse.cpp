@@ -1,3 +1,12 @@
+/* 
+Problem Statement
+Reverse a given Stack of integers using recursion.
+Sample Input:
+3
+2 1 3 
+Sample Output:
+2 1 3 
+*/
 #include<iostream>
 #include<stack>
 using namespace std;
