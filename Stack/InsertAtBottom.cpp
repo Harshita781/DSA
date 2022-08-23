@@ -14,25 +14,29 @@ Sample Output 1 :
 #include<iostream>
 #include<stack>
 using namespace std;
-void PushAtBottom(stack<int> s,int x){
+void solve(stack<int> s,int x){
     if(s.empty()){
         s.push(x);
         return;
     }
     int num=s.top();
     s.pop();
-    PushAtBottom(s,x);
+    solve(s,x);
     s.push(num);
     }
-void PrintStack(stack<int> s)
+stack<int> pushAtBottom(stack<int> &m, int x){
+    solve(m,x);
+    return m;
+}
+void PrintStack(stack<int> m)
 {
-    if (s.empty())
+    if (m.empty())
         return;
-    int x = s.top();
-    s.pop();
-    PrintStack(s);
+    int x = m.top();
+    m.pop();
+    PrintStack(m);
     cout << x << " ";
-    s.push(x);
+    m.push(x);
 }
 int main(){
     stack<int> m;
@@ -40,7 +44,9 @@ int main(){
     m.push(20);
     m.push(34);
     m.push(22);
-    PushAtBottom(m,9);
+    cout<<m.top()<<endl;
+    pushAtBottom(m,9);
+    cout<<m.top()<<endl;
     PrintStack(m);
     return 0;
 }
