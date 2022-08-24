@@ -11,13 +11,14 @@ Sample Output 1 :
 8 4 3 2
 5 6 2 4 9
 */
+
 #include<iostream>
 #include<stack>
 using namespace std;
 void solve(stack<int> s,int x){
     if(s.empty()){
         s.push(x);
-        return;
+        return ;
     }
     int num=s.top();
     s.pop();
