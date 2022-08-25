@@ -12,21 +12,24 @@ Sample Output 1 :
 5 6 2 4 9
 */
 
-#include<iostream>
-#include<stack>
+#include <iostream>
+#include <stack>
 using namespace std;
-void solve(stack<int> s,int x){
-    if(s.empty()){
+void solve(stack<int> s, int x)
+{
+    if (s.empty())
+    {
         s.push(x);
-        return ;
+        return;
     }
-    int num=s.top();
+    int num = s.top();
     s.pop();
-    solve(s,x);
+    solve(s, x);
     s.push(num);
-    }
-stack<int> pushAtBottom(stack<int> &m, int x){
-    solve(m,x);
+}
+stack<int> pushAtBottom(stack<int> &m, int x)
+{
+    solve(m, x);
     return m;
 }
 void PrintStack(stack<int> m)
@@ -39,15 +42,16 @@ void PrintStack(stack<int> m)
     cout << x << " ";
     m.push(x);
 }
-int main(){
+int main()
+{
     stack<int> m;
     m.push(10);
     m.push(20);
     m.push(34);
     m.push(22);
-    cout<<m.top()<<endl;
-    pushAtBottom(m,9);
-    cout<<m.top()<<endl;
+    cout << m.top() << endl;
+    pushAtBottom(m, 9);
+    cout << m.top() << endl;
     PrintStack(m);
     return 0;
 }
