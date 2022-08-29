@@ -1,8 +1,19 @@
+/*
+Problem Statement:
+You're given a stack consisting of 'N
+ integers.Your task is to sort this stack in descending order using recursion.
+ Sample Input 1:
+1
+5
+5 -2 9 -7 3
+Sample Output 1:
+9 5 3 -2 -7
+*/
 #include<iostream>
 #include<stack>
 using namespace std;
 void sortedInsert(stack<int> &stack,int num){
-    if(stack.empty() || (!stack.empty() && stack.top())){
+    if(stack.empty() || (!stack.empty() && stack.top()<num)){
         stack.push(num);
         return;
     }
@@ -34,10 +45,10 @@ void PrintStack(stack<int> m)
 int main()
 {
     stack<int> s;
-    s.push(12);
-    s.push(32);
-    s.push(10);
-    s.push(9);
+    s.push(2);
+    s.push(3);
+    s.push(1);
+    s.push(4);
     PrintStack(s);
     sortStack(s);
     cout << endl;
