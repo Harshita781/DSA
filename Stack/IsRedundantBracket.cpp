@@ -1,3 +1,14 @@
+/*
+Problem Statement:
+Given valid mathematicalexpression in the form of a string.You are supposed to return true if the givrn expression cntains a pair of redundant bracket, else return false. The given string only contains '(',')','+','-','*','/' and lowercase English letters.
+Sample Input 1 :
+2
+(a+b)
+(a+c*b)+(c))
+Sample Output 1 :
+No
+Yes
+*/
 #include<iostream>
 #include<stack>
 #include<string.h>
