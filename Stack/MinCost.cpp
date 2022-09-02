@@ -38,6 +38,11 @@ int findMinimumCost(string str){
 
 int main(){
     string s="{{{{}}{}}}";
-    cout<<findMinimumCost(s);
+    if(findMinimumCost(s)==0){
+        cout<<"String can be made valid"<<endl;
+    }
+    else{
+        cout<<"String can't be made valid"<<endl;
+    }
     return 0;
 }
