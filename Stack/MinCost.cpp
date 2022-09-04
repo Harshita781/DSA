@@ -11,51 +11,61 @@ Sample Output 1:
 1
 0
 */
-#include<iostream>
-#include<stack>
-#include<string.h>
+#include <iostream>
+#include <stack>
+#include <string.h>
 using namespace std;
-int findMinimumCost(string str){
-    if(str.length()%2==1){
+int findMinimumCost(string str)
+{
+    if (str.length() % 2 == 1)
+    {
         return -1;
-
     }
     stack<char> s;
-    for(int i=0;i<str.length();i++){
-        char ch=str[i];
-        if(ch=='{')
-        s.push(ch);
-        else{
-            if(!s.empty() && s.top()=='{'){
+    for (int i = 0; i < str.length(); i++)
+    {
+        char ch = str[i];
+        if (ch == '{')
+            s.push(ch);
+        else
+        {
+            if (!s.empty() && s.top() == '{')
+            {
                 s.pop();
             }
-            else{
+            else
+            {
                 s.push(ch);
             }
         }
-        
     }
-    int a=0,b=0;
-        while(!s.empty()){
-            if(s.top()=='{'){
-                b++;
-            }
-            else{
-                a++;
-            }
-            s.pop();
+    int a = 0, b = 0;
+    while (!s.empty())
+    {
+        if (s.top() == '{')
+        {
+            b++;
         }
-        int ans=(a+1)/2+(b+1)/2;
-        return ans;
+        else
+        {
+            a++;
+        }
+        s.pop();
+    }
+    int ans = (a + 1) / 2 + (b + 1) / 2;
+    return ans;
 }
 
-int main(){
-    string s="{{{{}}{}}}";
-    if(findMinimumCost(s)==0){
-        cout<<"String can be made valid"<<endl;
+int main()
+{
+    string s = "{{{{}}{}}}";
+    if (findMinimumCost(s) == 0)
+    {
+        cout << "String can be made valid" << endl;
     }
-    else{
-        cout<<"String can't be made valid"<<endl;
+    else
+    {
+        cout << "String can't be made valid" << endl;
     }
     return 0;
 }
