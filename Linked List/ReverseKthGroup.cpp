@@ -28,6 +28,7 @@ Node *KReverse(Node *head, int k)
         curr->next = prev;
         prev = curr;
         curr = next;
+        count++;
     }
     if (next != NULL)
     {
