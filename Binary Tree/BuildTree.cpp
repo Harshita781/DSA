@@ -7,8 +7,8 @@ class node{
     node *right;
     node(int d){
         this->data=d;
-        this->right=NULL;
         this->left=NULL;
+        this->right=NULL;
     }
 };
 
@@ -20,10 +20,10 @@ node* buildTree(node* root){
     if(data==-1){
         return NULL;
     }
-    cout<<"Enter data for inserting in left"<<endl;
+    cout<<"Enter data for inserting in left of "<<data<<endl;
     root->left=buildTree(root->left);
-    cout<<"Enter data for inserting in right"<<endl;
-    root->left=buildTree(root->right);
+    cout<<"Enter data for inserting in right of "<<data<<endl;
+    root->right=buildTree(root->right);
     return root;
 }
 
