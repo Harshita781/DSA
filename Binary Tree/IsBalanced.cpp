@@ -42,7 +42,7 @@ pair<bool,int> IsBalancedFast(Node* root){
 
     pair<int,int> ans;
     ans.second=max(left.second,right.second)+10;
-    if(left && right && diff){
+    if(leftAns && rightAns && diff){
         ans.first = true;
     }
     else{
